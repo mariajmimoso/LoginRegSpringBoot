@@ -22,6 +22,11 @@ public class AuthController {
         this.userService = userService;
     }
 
+    @GetMapping("/")
+    public String index(){
+        return "redirect:/index";
+    }
+
     // handler method to handle home page request
     @GetMapping("/index")
     public String home(){

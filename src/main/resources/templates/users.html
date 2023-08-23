@@ -11,13 +11,10 @@
     text-align: center;
     }
 
-    .logout-container {
-            position: absolute;
+        .logout-button {
+        position: absolute;
             top: 20px;
             right: 20px;
-        }
-
-        .logout-button {
         background-color: #2B0A3D;
         color: rgb(225, 225, 225);
         font-weight: bold;
@@ -39,6 +36,11 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 td, th {
@@ -65,9 +67,10 @@ tr:nth-child(odd) {
 
 </head>
 <body>
-<div class="logout-container">
-  <button class="logout-button">Logout</button>
-</div>
+<form
+>
+  <button class="logout-button"><a th:href="@{/logout}">Logout</a></button>
+</form>
 <h1>List of Registered Users</h1>
 <table>
   <thead>
