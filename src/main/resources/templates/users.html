@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Registration and Login</title>
+  <style>
+    body{
+    justify-content: center;
+    text-align: center;
+    }
+
+    .logout-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .logout-button {
+        background-color: #2B0A3D;
+        color: rgb(225, 225, 225);
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+    h1{
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(to right, #3370AD, #12ABDB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #2B0A3D;
+  text-align: left;
+  padding: 8px;
+}
+
+th{
+background-color: white;
+text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #3370AD;
+}
+tr:nth-child(odd) {
+  background-color: #12ABDB;
+}
+
+    }
+
+    </style>
+
+</head>
+<body>
+<div class="logout-container">
+  <button class="logout-button">Logout</button>
+</div>
+<h1>List of Registered Users</h1>
+<table>
+  <thead>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each = "user : ${users}">
+    <td th:text = "${user.firstName}"></td>
+    <td th:text = "${user.lastName}"></td>
+    <td th:text = "${user.email}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

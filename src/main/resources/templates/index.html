@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Registration and Login System</title>
+  <style>
+    body{
+    justify-content: center;
+    text-align: center;
+    background-image: url("image/logoCap.png");
+    background-repeat: repeat;
+    }
+
+    h1{
+    font-weight: bold;
+    font-style: italic;
+    background: linear-gradient(to right, #3370AD, #12ABDB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    .flex{
+        display: flex;
+        justify-content: center;
+        height: 75vh;
+        margin: 100px;
+    }
+
+    h2{
+        text-align: center;
+        color: #2B0A3D;
+        font-weight: bold;
+    }
+
+    input{
+        width: 100%;
+    }
+
+    button{
+        background-color: #2B0A3D;
+        color: rgb(225, 225, 225);
+        padding: 8px 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .container{
+        display: flex;
+        width:75vw;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .registration, .login{
+        justify-content: center;
+        flex: 1;
+        padding : 25px;
+    }
+
+ .registration{
+        background-color: #3370AD;
+    }
+
+    .login{
+        background-color: #12ABDB;
+    }
+
+    }
+</style>
+
+</head>
+<body>
+<h1 class="text-center"> Registration and Login System </h1>
+<br /><br />
+
+  <div class="flex">
+
+      <div>
+            <button type="submit"class="registration">Register</button>
+      </div>
+      <div>
+            <button type="submit" class="login">Login</button>
+    </div>
+
+
+</body>
+</html>
