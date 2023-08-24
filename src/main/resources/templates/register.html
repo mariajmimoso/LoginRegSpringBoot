@@ -9,8 +9,30 @@
     body{
     justify-content: center;
     text-align: center;
-    background-image: url("image/logoCap.png");
-    background-repeat: repeat;
+    background: #eff0f4
+    }
+
+    .logout-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-image: linear-gradient(to right, #3370AD, #12ABDB);
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        }
+
+        a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.alert{
+        font-weight: bold;
+        font-size: 25px;
+        color: red;
     }
 
     h1{
@@ -21,21 +43,13 @@
     -webkit-text-fill-color: transparent;
     }
 
-    .flex{
-        display: flex;
-        justify-content: center;
-        height: 75vh;
-        margin: 100px;
-    }
-
-    h2{
-        text-align: center;
-        color: #2B0A3D;
+    .control-label{
         font-weight: bold;
+        font-size: 20px;
     }
 
     input{
-        width: 75%;
+        width: 30%;
     }
 
     button{
@@ -47,45 +61,16 @@
         cursor: pointer;
     }
 
-    .container{
-        display: flex;
-        width:75vw;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
 
-    .control-label{
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .alert{
-        font-weight: bold;
-        font-size: 25px;
-        color: red;
-    }
-
-    .registration, .login{
-        justify-content: center;
-        flex: 1;
-        padding : 25px;
-    }
-
- .registration{
-        background-color: #3370AD;
-    }
-
-    .login{
-        background-color: #12ABDB;
-    }
-
-    }
 </style>
 </head>
 <body>
-<br /><br /><br />
+<form>
+  <button class="logout-button"><a th:href="@{/index}">Home</a></button>
+</form>
+<br /><br />
 <div th:if="${param.success}">
-  <div class="alert alert-info">You have successfully registered our app!</div>
+  <div class="alert">You have successfully registered our app!</div>
 </div>
 <h1 class="text-center">Registration Form</h1>
 <form
@@ -94,70 +79,66 @@
         th:action="@{/register/save}"
         th:object="${user}"
 >
-  <div class="form-group mb-3">
+  <div>
     <label class="control-label"> First Name:</label>
-    <br /><br />
+    <br />
     <input
-            class="form-control"
             id="firstName"
             name="firstName"
             placeholder="Enter first name"
             th:field="*{firstName}"
             type="text"
     />
-    <p th:errors = "*{firstName}" class="text-danger" th:if="${#fields.hasErrors('firstName')}"></p>
+    <p th:errors = "*{firstName}" class="alert" th:if="${#fields.hasErrors('firstName')}"></p>
   </div>
 
   <br /><br />
 
-  <div class="form-group mb-3">
+  <div>
     <label class="control-label">Last Name:</label>
-    <br /><br />
+    <br />
     <input
-            class="form-control"
             id="lastName"
             name="lastName"
             placeholder="Enter last name"
             th:field="*{lastName}"
             type="text"
     />
-    <p th:errors = "*{lastName}" class="text-danger" th:if="${#fields.hasErrors('lastName')}"></p>
+    <p th:errors = "*{lastName}" class="alert" th:if="${#fields.hasErrors('lastName')}"></p>
   </div>
 
   <br /><br />
 
-  <div class="form-group mb-3">
+  <div>
     <label class="control-label">Email:</label>
-    <br /><br />
+    <br />
     <input
-            class="form-control"
             id="email"
             name="email"
             placeholder="Enter email address"
             th:field="*{email}"
             type="email"
     />
-    <p th:errors = "*{email}" class="text-danger" th:if="${#fields.hasErrors('email')}"></p>
+    <p th:errors = "*{email}" class="alert" th:if="${#fields.hasErrors('email')}"></p>
   </div>
 
   <br /><br />
 
-  <div class="form-group mb-3">
+  <div>
     <label class="control-label">Password:</label>
-    <br /><br />
+    <br />
     <input
-            class="form-control"
             id="password"
             name="password"
             placeholder="Enter password"
             th:field="*{password}"
             type="password"
     />
-    <p th:errors = "*{password}" class="text-danger" th:if="${#fields.hasErrors('password')}"></p>
+    <p th:errors = "*{password}" class="alert" th:if="${#fields.hasErrors('password')}"></p>
   </div>
   <br /><br />
 
-  <button type="submit" class="btn btn-primary" >Register</button>
+  <button type="submit">Register</button>
 </form>
 </body>
 </html>

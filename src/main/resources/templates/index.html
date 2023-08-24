@@ -3,17 +3,16 @@
       xmlns:th="http://www.thymeleaf.org"
 >
 <head>
-  <meta charset="UTF-8">
-  <title>Registration and Login System</title>
-  <style>
-    body{
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+  body{
     justify-content: center;
     text-align: center;
-    background-image: url("image/logoCap.png");
-    background-repeat: repeat;
+    background: #eff0f4
     }
 
-    h1{
+     h1{
     font-weight: bold;
     font-style: italic;
     background: linear-gradient(to right, #3370AD, #12ABDB);
@@ -28,6 +27,26 @@
         margin: 100px;
     }
 
+    .login-info-box{
+    width:30%;
+    padding:0 50px;
+    top:20%;
+    left:15%;
+    position:absolute;
+    text-align:left;
+
+    background-color: #3370AD;
+}
+
+h2{
+    font-weight: bold;
+    font-style: italic;
+    }
+
+    form{
+    justify-content: center;
+    }
+
     button{
         background-color: #2B0A3D;
         color: rgb(225, 225, 225);
@@ -36,14 +55,14 @@
         text-align: center;
         border-radius: 10px;
         cursor: pointer;
-    }
-
-    .registration, .login{
         justify-content: center;
         flex: 1;
-        padding : 25px;
         text-decoration: none;
         color: inherit;
+    }
+
+    .login{
+         background-color: #3370AD;
     }
 
     a{
@@ -51,29 +70,39 @@
   color: inherit;
 }
 
- .registration{
-        background-color: #3370AD;
-    }
 
-    .login{
-        background-color: #12ABDB;
-    }
-</style>
+.register-info-box{
+    width:30%;
+    padding:0 50px;
+    end:20%;
+    right:15%;
+    position:absolute;
+    text-align:left;
+    background-color: #12ABDB;
+}
 
+.registration{
+    background-color: #12ABDB;
+    }
+  </style>
 </head>
 <body>
-<h1 class="text-center"> Registration and Login</h1>
-<br /><br />
-
-  <div class="flex">
-
-      <form>
+<h1> Registration and Login</h1>
+<div class="flex">
+    <div class="login-info-box">
+        <h2>Don't have an account?</h2>
+        <form>
             <button type="submit" class="registration"><a aria-current="page" th:href="@{/register}">Register</a></button>
-      </form>
+        </form>
+    </div>
 
-      <form>
+    <div class="register-info-box">
+        <h2>Have an account?</h2>
+        <form>
             <button type="submit" class="login"><a aria-current="page" th:href="@{/login}">Login</a></button>
-    </form>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>

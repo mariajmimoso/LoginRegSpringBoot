@@ -9,6 +9,7 @@
     body{
     justify-content: center;
     text-align: center;
+    background: #eff0f4
     }
 
         .logout-button {
@@ -24,6 +25,11 @@
         cursor: pointer;
         }
 
+        a{
+  text-decoration: none;
+  color: inherit;
+}
+
     h1{
     font-weight: bold;
     font-style: italic;
@@ -38,12 +44,7 @@ table {
   width: 100%;
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
-}
-
-td, th {
+th, td {
   border: 1px solid #2B0A3D;
   text-align: left;
   padding: 8px;
@@ -57,18 +58,15 @@ text-align: center;
 tr:nth-child(even) {
   background-color: #3370AD;
 }
+
 tr:nth-child(odd) {
   background-color: #12ABDB;
 }
-
-    }
-
-    </style>
+</style>
 
 </head>
 <body>
-<form
->
+<form>
   <button class="logout-button"><a th:href="@{/logout}">Logout</a></button>
 </form>
 <h1>List of Registered Users</h1>

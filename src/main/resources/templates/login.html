@@ -9,6 +9,30 @@
     body{
     justify-content: center;
     text-align: center;
+    background: #eff0f4
+    }
+
+    .home-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-image: linear-gradient(to right, #3370AD, #12ABDB);
+        font-weight: bold;
+        text-align: center;
+        padding: 8px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+        }
+
+        a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.alert{
+        font-weight: bold;
+        font-size: 25px;
+        color: red;
     }
 
     h1{
@@ -19,21 +43,13 @@
     -webkit-text-fill-color: transparent;
     }
 
-    .flex{
-        display: flex;
-        justify-content: center;
-        height: 75vh;
-        margin: 100px;
-    }
-
-    h2{
-        text-align: center;
-        color: #2B0A3D;
+    .control-label{
         font-weight: bold;
+        font-size: 20px;
     }
 
     input{
-        width: 75%;
+        width: 30%;
     }
 
     button{
@@ -45,83 +61,50 @@
         cursor: pointer;
     }
 
-    .container{
-        display: flex;
-        width:75vw;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .control-label{
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .alert{
-        font-weight: bold;
-        font-size: 25px;
-        color: red;
-    }
-
-    .registration, .login{
-        justify-content: center;
-        flex: 1;
-        padding : 25px;
-    }
-
- .registration{
-        background-color: #3370AD;
-    }
-
-    .login{
-        background-color: #12ABDB;
-    }
-
-    }
 </style>
 </head>
 <body>
+<form>
+    <button class="home-button"><a th:href="@{/index}">Home</a></button>
+</form>
 <br /><br />
       <div th:if="${param.error}">
-        <div class="alert alert-danger">Invalid Email or Password</div>
+        <div class="alert">Invalid Email or Password</div>
       </div>
       <div th:if="${param.logout}">
-        <div class="alert alert-success"> You have been logged out.</div>
+        <div class="alert"> You have been logged out.</div>
       </div>
           <h1 class="text-center">Login Form</h1>
           <form
                   method="post"
                   role="form"
                   th:action="@{/login}"
-                  class="form-horizontal"
           >
-            <div class="form-group mb-3">
+            <div>
               <label class="control-label"> Email</label>
-              <br /><br />
+              <br />
               <input
                       type="text"
                       id="username"
                       name="username"
-                      class="form-control"
                       placeholder="Enter email address"
               />
             </div>
 
               <br /><br /><br />
 
-            <div class="form-group mb-3">
+            <div>
               <label class="control-label"> Password</label>
-              <br /><br />
+              <br />
               <input
                       type="password"
                       id="password"
                       name="password"
-                      class="form-control"
                       placeholder="Enter password"
               />
             </div>
               <br /><br /><br />
-              <button type="submit" class="btn btn-primary" >Submit</button>
+              <button type="submit" class="btn btn-primary" >Login</button>
           </form>
 </body>
 </html>
