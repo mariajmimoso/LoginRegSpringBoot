@@ -1,4 +1,4 @@
-## LoginRegSpringBoot
+## LoginRegSpringBoot 👻💀☠️
 Registration and Login with SpringBoot
 
 Projeto: Spring-Boot 3.0.9
